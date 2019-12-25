@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import ReactSwipe from 'react-swipe';
 import axios from 'axios';
 import AxiosPost from '../services/request'
+import Goods from '../components/Goods'
 
 export class Index extends Component {
     constructor() {
@@ -55,7 +56,6 @@ export class Index extends Component {
                 ad_list
             })
             this.getSecondData()
-            this.getThirdData()
         }).catch((err) => {
         })
     }
@@ -70,20 +70,23 @@ export class Index extends Component {
                 item_recommend_nav_list,
                 success: true,
             })
+            this.getThirdData(item_recommend_nav_list[0].index_ads_id)
         }).catch((err) => {
         })
     }
-    getThirdData = (event) => {
+    getThirdData = (id) => {
         console.log('---third0000')
     let param = {
         api_name: "kyk.itemV2.getHomePageItemRecommendList",
-        recommend_id: '',
+        recommend_id: id,
         first_row: 0,
         fetch_num: 10,
       }
       console.log('---third0000')
       AxiosPost(param).then((res) => {
-          console.log('0')
+          this.setState({
+              goods_list: res.data.list
+          })
       }).catch((err) => {
       })
     }
@@ -213,8 +216,14 @@ export class Index extends Component {
                             })
                         }
                     </div>
-                    <div className="recommand_goods">
-                        
+                    <div className="recommand_goods flex_wrap">
+                        {
+                            this.state.goods_list && this.state.goods_list.item_list.map((item, key) => {
+                                return(
+                                    <Goods key={key} goods_data={item} />
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>

@@ -1,0 +1,13 @@
+.recommand_box {
+    width:50%;
+    height:282px;
+    background:#fff;
+}
+.recommand_img{
+    width:177px;
+    height:177px;
+}
+.recommand_img img {
+    width:100%;
+    height:100%;
+}
