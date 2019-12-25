@@ -1,0 +1,212 @@
+
+body,
+div,
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img,
+del,
+em,
+strong,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+footer,
+header,
+nav,
+section,
+audio,
+video,
+textarea,
+select,
+a,
+button,
+hr {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul,
+li,
+dl,
+dt,
+dd {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong {
+  font-weight: normal;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: #333;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+legend {
+  color: #333;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  border: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
+  cursor: pointer;
+}
+a:hover,
+a:active,
+a:focus {
+  outline: none;
+}
+
+input,
+button,
+select,
+option,
+textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  border: none;
+  vertical-align: middle;
+  border-radius: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+textarea {
+  resize: none;
+}
+button,
+label {
+  cursor: pointer;
+}
+select::-ms-expand {
+  display: none;
+}
+
+em, i {
+  font-style: normal;
+  display: inline-block;
+}
+
+/* 单行溢出隐藏 */
+.one-txt-cut {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* // 两行溢出隐藏 */
+.two-txt-cut {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* // 隐藏滚动条 */
+.hideBar::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_1579589_kxbkxn0alyb.eot?t=1577261073510'); /* IE9 */
+  src: url('//at.alicdn.com/t/font_1579589_kxbkxn0alyb.eot?t=1577261073510#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAMMAAsAAAAABvwAAAK9AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqBZIFcATYCJAMMCwgABCAFhG0HNxsjBhEVlC1kPwfczay911rSrMYaYyvZ1s1pQzNSZmbu4HnYH++5ePgSolSFkUlpToJCXemMzssvAQLUnl4cJRqIZcWZBu1+fCV4kDamLc+awkaoLsc71lDTdibtTi9NGee3Mwj1QuKw2EdhwDHTJdBA8oDmkpEcCTjBgXXimmwDeUH/ZXitS+mgLkOAVCppRyZOrm4hxiGzBJD9ZR5DnAvguJqOEcKajY5cISDWs3qBy+Hv5R+9EoMSGGThDB9nMDKn+TWT5CTrfQLC+WyAug0MaAccZGNtYgUMUWlGqsLb80McQecKJwmhwJGF9B8eKAISQkrTAWjGSYWfxAWp0kF01xcZACHgwBjAChBN/thna3p5RsaRn7dQtTiz3L2K3Hlz7l3pJPXVu1Pvmzbl/vvzb0sg7eXbk292fRa9Rfnt80l1fnZjx2ch3zrVsKCAbp58U704MvNdn1GuzxOStDrz78kTtcZ3DYjV3dXOcDp2pVN45vnzM0VQBNWn73xI0+cvzhQCD5aeLgI2A0CSdmxfSYV+O/7Nf0PX4U+j4e7A/3jTAfjCezngS8KhXzHEKPQW/lRhzw53xMRobgm4wHMZzSNtClCWCiRAPLn8GK8puPGUEFOQQomogBFTT3RqOwLS6EdIzDBSaWN6exp5HABD3JUCtHpBENm+oDJ9hsn2TXTqLwKF/hHKzpBqqbwD0zS2Z2NcKTbKMHnGMpWOmdk2ovJryscm1qw4pN+TDmUYfccrpk+pI51jyfCQB2aMrNLiCbqOmkawV6koNacw66euy3UfclJpYcM4RWKGZFDiGSqlRIf9/maj9P1rJDdqxLSlps15j6hBOTjyObwexFNF16vmXm4ZPMgFjGGIKdFCJ8hGGpoQqK8fVyEp4yhGxHpTLu7FfRXO+qr2A/LVBshwS8XEsct4led1JiMAAAAA') format('woff2'),
+  url('//at.alicdn.com/t/font_1579589_kxbkxn0alyb.woff?t=1577261073510') format('woff'),
+  url('//at.alicdn.com/t/font_1579589_kxbkxn0alyb.ttf?t=1577261073510') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('//at.alicdn.com/t/font_1579589_kxbkxn0alyb.svg?t=1577261073510#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconjia:before {
+  content: "\e692";
+}
+
+.iconjiantou:before {
+  content: "\e610";
+}

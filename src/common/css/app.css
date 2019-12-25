@@ -1,0 +1,28 @@
+
+.flex_wrap {
+    display:flex;
+    flex-wrap: wrap;
+}
+/* 超出变成省略号 */
+.between {
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  /* 2行超出变成省略号 */
+  .betweenTwo {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+  }
+  /* 3行超出变成省略号 */
+  .betweenThree {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    white-space:nowrap;
+    overflow: hidden;
+  }
