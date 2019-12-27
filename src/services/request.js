@@ -12,13 +12,10 @@ let data = {
 }
 function AxiosPost(param) {
   var params = qs.stringify(Object.assign(param, data))
-  console.log('-----aaaaaaaaa----')
   var promise = new Promise((resolve, reject) => {
-    console.log('params', params)
     axios.post('https://beta.test.51k1k.com/api/api', params)
       .then(res => {
         if (res.data.code == 0) {   //返回正确信息
-          console.log(res.data, param.api_name)
           resolve(res.data);
         } else {                        //返回错误提示信息
           reject(res.data);

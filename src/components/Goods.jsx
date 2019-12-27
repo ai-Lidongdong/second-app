@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './css/Goods.css'
+import Label from './Label'
 
 export class Goods extends Component {
     constructor() {
@@ -9,7 +10,6 @@ export class Goods extends Component {
         }
     }
     componentDidMount() {
-        console.log(this.props)
     }
     render() {
         const goods_data = this.props.goods_data
@@ -19,19 +19,20 @@ export class Goods extends Component {
                     <img src={goods_data.base_pic} alt=""/>
                 </div>
                 <div className="recommand_info">
-                    <div className="recommand_title">{goods_data.item_name}</div>
-                    <div className="recommand_label">
-                      {
-                          goods_data.help_red_packet_tag_list && goods_data.help_red_packet_tag_list.map((item, key) => {
-                              return (
-                                  <label></label>
-                              )
-                          })
-                      }
+                    <div className="recommand_title">
+                        <p className="betweenTwo">{goods_data.item_name}</p>
                     </div>
-                    <div className="recommand_info_down">
-                        <p className="recommand_pirce"></p>
-                        <p className="recommand_icon"></p>
+                    <div className="recommand_label">
+                         <Label label_list={goods_data.help_red_packet_tag_list}/>
+                    </div>
+                    <div className="recommand_info_down flex_wrap">
+                        <p className="recommand_pirce">
+                            ￥<span>{goods_data.real_price}</span>
+                            <span className="recommand_original_price">{goods_data.original_price}</span>
+                        </p>
+                        <p className="recommand_icon">
+                            <span className="iconfont iconjia"></span>
+                        </p>
                     </div>
                 </div>
             </li>

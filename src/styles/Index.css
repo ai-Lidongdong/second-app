@@ -178,9 +178,10 @@ body{
     display:flex;
     white-space: nowrap;
     overflow-x: auto;
+    height:57px;
 }
 .nav_title {
-    padding:0 14px;
+    padding:9px 14px;
 }
 .nav_title .first_title {
     font-size:14px;
@@ -189,4 +190,7 @@ body{
 .nav_title .secondary {
     font-size:10px;
     color:#999;
+}
+.recommand_goods {
+    justify-content:space-between
 }
