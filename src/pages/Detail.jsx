@@ -1,19 +1,21 @@
 import React, { Component } from 'react'
 
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
+  import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
 import AxiosPost from '../services/request'
-import "slick-carousel/slick/slick-theme.css";
+//  import "slick-carousel/slick/slick-theme.css";
+import { Link } from 'react-router-dom';
 import '../styles/Detail.css'
 
 
 export default class Detail extends Component {
-    constructor() {
+    constructor(props) {
         super();
         this.state = {
         }
     }
     componentDidMount() {
+        console.log('props', this.props)
         this.getDetailData()
     }
     getDetailData = () => {
@@ -23,6 +25,7 @@ export default class Detail extends Component {
             third_tag: 1,
         }
         AxiosPost(param).then((res) => {
+            console.log('res', res)
             this.setState({
                 data_json: res.data.list
             })
@@ -43,7 +46,7 @@ export default class Detail extends Component {
                 <header>
                     <Slider {...settings}>
                         {
-                            data_json && data_json.banner_pic.map((item, key) => {
+                            this.state.data_json && data_json.banner_pic.map((item, key) => {
                                 return (
                                     <img key={key} src={item} />
                                 )
@@ -65,6 +68,11 @@ export default class Detail extends Component {
                             <img src="" />
                         </div>
                     </div>
+                </div>
+                <div className="footer">
+                <Link className="link" to={`/Confirm?order_id=${33}`}>
+                <div>跳转下单s页</div>
+                </Link>
                 </div>
             </div>
         )

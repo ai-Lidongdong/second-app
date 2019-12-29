@@ -3,13 +3,26 @@ import logo from './logo.svg';
 import './common/css/icon.css'
 import Index from './pages/Index'
 import Detail from './pages/Detail'
+import Confirm from './pages/Confirm'
+import {BrowserRouter as Router , Route, Link} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <Index/>
-    </div>
+    <Router>
+      <div>
+        {/* <Link to="/">首页</Link>
+        <Link to="/Detail">商品详情页</Link>
+        <Link to="/Confirm">下单页</Link> */}
+        <Route  exact path="/" component={Index} />
+        <Route  path="/Detail/:id" component={Detail} />
+        <Route  path="/Confirm" component={Confirm} />
+      </div>
+    </Router>
+    // <div className="App">
+    //   <Confirm/>
+    // </div>
   );
 }
 
 export default App;
+ 

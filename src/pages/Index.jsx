@@ -5,6 +5,7 @@ import Header from '../components/Header'
 import ReactSwipe from 'react-swipe';
 import AxiosPost from '../services/request'
 import Goods from '../components/Goods'
+import {Link} from 'react-router-dom';
 
 export class Index extends Component {
     constructor() {
@@ -35,6 +36,7 @@ export class Index extends Component {
         }
     }
     componentDidMount() {
+        console.log('-------componentDidMount-----')
         this.getFirstData()
     }
     getFirstData = () => {
@@ -101,7 +103,7 @@ export class Index extends Component {
         } = this.state
         return (
             <div className="wrap">
-                <Header />
+                {/* <Header /> */}
                 <div className="header">
                     <ReactSwipe className="carousel">
                         {
@@ -137,13 +139,15 @@ export class Index extends Component {
                                 {
                                     user_item_recommend.item_list.map((item, key) => {
                                         return (
-                                            <li className={key > 0 ? 'goods_box goods_active' : 'goods_box'} key={key}>
-                                                <img className="goods_img" src={item.base_pic} alt=""/>
-                                                <div className="goods_info">
-                                                    <div className="title betweenTwo">{item.item_name}</div>
-                                                    <div className="price">￥<span>{item.real_price}</span></div>
-                                                </div>
-                                            </li>
+                                            <Link to={`/Detail/${item.item_id}`}>
+                                                <li className={key > 0 ? 'goods_box goods_active' : 'goods_box'} key={key}>
+                                                    <img className="goods_img" src={item.base_pic} alt=""/>
+                                                    <div className="goods_info">
+                                                        <div className="title betweenTwo">{item.item_name}</div>
+                                                        <div className="price">￥<span>{item.real_price}</span></div>
+                                                    </div>
+                                                </li>
+                                            </Link>
                                         )
                                     })
                                 }
