@@ -1,23 +1,24 @@
-header img {
-    width:100%;
-    height:375px;
-    display:block;
-}
-header {
-    border:solid 1px red;
-    height:375px;
-}
-.footer {
-    width:100%;
-    height:50px;
-    background:pink;
-    text-align: center;
-    line-height: 50px;
-    font-size:20px;
-    color:#ff0000;
-    position:fixed;bottom:0;left:0;
-}
-.link {
-    width:100%;
-    height:100%;
-}
+
+    header img {
+        width:100%;
+        height:375px;
+        display:block;
+    }
+    header {
+        border:solid 1px red;
+        height:375px;
+    }
+    .down_but {
+        width:100%;
+        height:50px;
+        background:pink;
+        text-align: center;
+        line-height: 50px;
+        font-size:20px;
+        color:#ff0000;
+        position:fixed;bottom:0;left:0;
+    }
+    .link {
+        width:100%;
+        height:100%;
+    }

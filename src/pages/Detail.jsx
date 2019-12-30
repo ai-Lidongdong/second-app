@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
   import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
+ import "slick-carousel/slick/slick.css";
 import AxiosPost from '../services/request'
 //  import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
-import '../styles/Detail.css'
+import  '../styles/Detail.css'
 
 
 export default class Detail extends Component {
@@ -69,7 +69,7 @@ export default class Detail extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="footer">
+                <div className="down_but">
                 <Link className="link" to={`/Confirm?order_id=${33}`}>
                 <div>跳转下单s页</div>
                 </Link>

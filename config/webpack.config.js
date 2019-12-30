@@ -1,5 +1,4 @@
 'use strict';
-
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
@@ -434,6 +433,7 @@ module.exports = function(webpackEnv) {
               exclude: cssModuleRegex,
               use: getStyleLoaders({
                 importLoaders: 1,
+                modules: true,
                 sourceMap: isEnvProduction && shouldUseSourceMap,
               }),
               // Don't consider CSS imports dead code even if the
@@ -444,10 +444,18 @@ module.exports = function(webpackEnv) {
             },
             // Adds support for CSS Modules (https://github.com/css-modules/css-modules)
             // using the extension .module.css
+              {
+                test: /\.css$/,
+                loaders: [
+                  'style-loader',
+                  'css-loader?modules'
+                ]
+            },
             {
               test: cssModuleRegex,
               use: getStyleLoaders({
                 importLoaders: 1,
+                modules: true,
                 sourceMap: isEnvProduction && shouldUseSourceMap,
                 modules: {
                   getLocalIdent: getCSSModuleLocalIdent,
@@ -463,6 +471,7 @@ module.exports = function(webpackEnv) {
               use: getStyleLoaders(
                 {
                   importLoaders: 2,
+                  modules: true,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
                 },
                 'sass-loader'
@@ -670,4 +679,5 @@ module.exports = function(webpackEnv) {
     // our own hints via the FileSizeReporter
     performance: false,
   };
+  
 };

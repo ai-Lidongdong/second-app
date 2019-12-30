@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../styles/Confirm.css'
+import styles from  '../styles/Confirm.css'
 import url from  'url'
 import { parse } from 'querystring';
 
@@ -16,7 +16,7 @@ export default class Confirm extends Component {
     }
     render() {
         return (
-            <div className='confirm_wrap'>
+            <div className={styles.confirm_wrap}>
                 Confirm
             </div>
         )

@@ -103,7 +103,7 @@ export class Index extends Component {
         } = this.state
         return (
             <div className="wrap">
-                {/* <Header /> */}
+                <Header />
                 <div className="header">
                     <ReactSwipe className="carousel">
                         {
